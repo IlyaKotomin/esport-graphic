@@ -11,17 +11,19 @@ namespace EsportGraphics.src.Core
     public abstract class UpdateAndDraw : IUpdateable, IDrawable
     {
         public Layer Layer;
-        public UpdateAndDraw(Layer layer)
+        public UpdateAndDraw()
         {
             (typeof(Game).GetField("updateableComponents",
-                BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic)
+                BindingFlags.Instance
+                | BindingFlags.Static
+                | BindingFlags.NonPublic)
                 .GetValue(MonoMain.instance) as List<IUpdateable>).Add(this);
 
             (typeof(Game).GetField("drawableComponents",
-                BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic)
+                BindingFlags.Instance
+                | BindingFlags.Static
+                | BindingFlags.NonPublic)
                 .GetValue(MonoMain.instance) as List<IDrawable>).Add(this);
-
-            Layer = layer;
         }
         public static void Initialize()
         {
@@ -42,10 +44,15 @@ namespace EsportGraphics.src.Core
         public event EventHandler<EventArgs> DrawOrderChanged;
         public void Draw(GameTime gameTime)
         {
-            Graphics.screen.Begin(SpriteSortMode.BackToFront, BlendState.NonPremultiplied, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone, null, Microsoft.Xna.Framework.Matrix.Identity);
-            this.Layer.Begin(true);
+            Graphics.screen.Begin(SpriteSortMode.BackToFront,
+                                  BlendState.NonPremultiplied,
+                                  SamplerState.PointClamp,
+                                  DepthStencilState.Default,
+                                  RasterizerState.CullNone,
+                                  null,
+                                  Microsoft.Xna.Framework.Matrix.Identity);
+
             Draw();
-            this.Layer.End(true);
             Graphics.screen.End();
         }
         public virtual void Draw() { }

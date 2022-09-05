@@ -75,6 +75,9 @@
     <Compile Include="src\Core\UpdateAndDraw.cs" />
     <Compile Include="src\Core\ModInitialize.cs" />
     <Compile Include="src\Core\EsportGraphicsMod.cs" />
+    <Compile Include="src\Core\Utilites.cs" />
+    <Compile Include="src\DebugUD.cs" />
+    <Compile Include="src\DrawAndUpdateClass.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
