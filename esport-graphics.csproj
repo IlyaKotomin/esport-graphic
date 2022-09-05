@@ -7,8 +7,8 @@
     <ProjectGuid>{B07BDC3C-3770-4A07-90D8-5C2A68E2172B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ModName</RootNamespace>
-    <AssemblyName>ModName</AssemblyName>
+    <RootNamespace>EsportGraphics</RootNamespace>
+    <AssemblyName>EsportGraphics</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <LangVersion>10.0</LangVersion>
     <FileAlignment>512</FileAlignment>
@@ -72,11 +72,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\Core\Assemblyes.cs" />
-    <Compile Include="src\Core\DrawMe.cs" />
-    <Compile Include="src\Core\UpdateMe.cs" />
+    <Compile Include="src\Core\UpdateAndDraw.cs" />
     <Compile Include="src\Core\ModInitialize.cs" />
-    <Compile Include="src\Core\ModName.cs" />
-    <Compile Include="src\Debug.cs" />
+    <Compile Include="src\Core\EsportGraphicsMod.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

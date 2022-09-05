@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using ModName.src.Core;
+using EsportGraphics.src.Core;
 
-namespace ModName.src
+namespace EsportGraphics.src
 {
     static class ModInitialize
     {
@@ -14,20 +14,7 @@ namespace ModName.src
         }
         public static void PostInitialize()
         {
-            InitializeDraws();
-            InitializeUpdates();
-        }
-        private static void InitializeDraws()
-        {
-            IEnumerable<Type> drawList = Assembly.GetAssembly(typeof(DrawMe)).GetTypes().Where(type => type.IsSubclassOf(typeof(DrawMe)));
-
-            foreach (Type drawItem in drawList) { DrawMe instance = (DrawMe)Activator.CreateInstance(drawItem); }
-        }
-        private static void InitializeUpdates()
-        {
-            IEnumerable<Type> updateList = Assembly.GetAssembly(typeof(UpdateMe)).GetTypes().Where(type => type.IsSubclassOf(typeof(UpdateMe)));
-
-            foreach (Type updateItem in updateList) { UpdateMe instance = (UpdateMe)Activator.CreateInstance(updateItem); }
+            UpdateAndDraw.Initialize();
         }
     }
 }

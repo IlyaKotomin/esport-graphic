@@ -1,9 +1,8 @@
-﻿//Kotxik`s mod template
-using ModName.src;
+﻿using EsportGraphics.src;
 
 namespace DuckGame.src
 {
-    public class ModName : DisabledMod
+    public class EsportGraphicsMod : DisabledMod
     {
         public override Priority priority => base.priority;
         protected override void OnPreInitialize()
