@@ -71,13 +71,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Config\Data.cs" />
+    <Compile Include="src\Config\Options.cs" />
     <Compile Include="src\Core\Assemblyes.cs" />
     <Compile Include="src\Core\UpdateAndDraw.cs" />
     <Compile Include="src\Core\ModInitialize.cs" />
     <Compile Include="src\Core\EsportGraphicsMod.cs" />
     <Compile Include="src\Core\Utilites.cs" />
-    <Compile Include="src\DebugUD.cs" />
-    <Compile Include="src\DrawAndUpdateClass.cs" />
+    <Compile Include="src\EGraphics\Bullets.cs" />
+    <Compile Include="src\EGraphics\ESColors.cs" />
+    <Compile Include="src\EGraphics\ESConfig.cs" />
+    <Compile Include="src\EGraphics\ESMaterials.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
