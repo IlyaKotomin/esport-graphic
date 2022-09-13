@@ -71,17 +71,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\Config\Data.cs" />
-    <Compile Include="src\Config\Options.cs" />
+    <Compile Include="src\Config\ColorsData.cs" />
+    <Compile Include="src\Config\ESOptions.cs" />
+    <Compile Include="src\Config\SettingsData.cs" />
     <Compile Include="src\Core\Assemblyes.cs" />
     <Compile Include="src\Core\UpdateAndDraw.cs" />
     <Compile Include="src\Core\ModInitialize.cs" />
     <Compile Include="src\Core\EsportGraphicsMod.cs" />
     <Compile Include="src\Core\Utilites.cs" />
+    <Compile Include="src\DEBUG.cs" />
+    <Compile Include="src\EGraphics\Background.cs" />
+    <Compile Include="src\EGraphics\Blocks.cs" />
     <Compile Include="src\EGraphics\Bullets.cs" />
+    <Compile Include="src\EGraphics\Ducks.cs" />
     <Compile Include="src\EGraphics\ESColors.cs" />
-    <Compile Include="src\EGraphics\ESConfig.cs" />
+    <Compile Include="src\EGraphics\ESSettings.cs" />
     <Compile Include="src\EGraphics\ESMaterials.cs" />
+    <Compile Include="src\EsportCamera.cs" />
+    <Compile Include="src\Shaders\ColorMaterial.cs" />
+    <Content Include="src\Shaders\ColorShader.fx" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

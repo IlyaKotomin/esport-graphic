@@ -12,30 +12,27 @@ namespace EsportGraphics.src.EGraphics
         {
             StartDraw(_layer);
 
-            //foreach (Bullet bullet in Level.current.things[typeof(Bullet)])
-            //{
-            //    Graphics.DrawLine(p1: bullet.end,
-            //                      p2: bullet.start,
-            //                      col: Color.Red * 0.5f);
-
-            //}
+            foreach (Net net in Level.current.things[typeof(Net)])
+                Graphics.DrawRect(net.topLeft, net.bottomRight, ESColors.EnemyHitBoxes);
 
             StopDraw(_layer);
         }
         public override void Update()
         {
-            foreach (Bullet bullet in Level.current.things[typeof(Bullet)])
+            if (!ESSettings.BulletColorChanger)
+                return;
+
+            foreach (Bullet bullet in Utilites.AvailableThings(typeof(Bullet)))
             {
                 if (bullet == null)
                     return;
 
-
                 if (bullet.owner != null && bullet.owner.isLocal && bullet is not GrenadeBullet)
                 {
-                    bullet.color = Color.Green;
+                    bullet.color = ESColors.LocalBullet;
                 }
                 else
-                    bullet.color = Color.Red;
+                    bullet.color = ESColors.EnemyBullet;
             }
         }
     }
