@@ -34,7 +34,7 @@ namespace EsportGraphics.src.Core
         public bool Enabled => true;
         public int UpdateOrder => 1;
 
-        public bool Visible => true;
+        public virtual bool Visible { get { return true; } set { } }
 
         public int DrawOrder => 1;
 

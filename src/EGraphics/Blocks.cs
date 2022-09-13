@@ -25,6 +25,9 @@ namespace EsportGraphics.src.EGraphics
         }
         public override void Update()
         {
+            foreach (Block block in AvailableThings(typeof(Block)))
+                if(block is IPlatform)
+                    block.material = new Shaders.ColorMaterial(ESColors.Blocks);
         }
     }
 }

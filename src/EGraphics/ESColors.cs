@@ -3,7 +3,7 @@ using static EsportGraphics.src.Config.ESOptions;
 
 namespace EsportGraphics.src.EGraphics
 {
-    internal class ESColors
+    public static class ESColors
     {
         public static Color EnemyBullet => new Color(_colorsData.EnemyBulletR, _colorsData.EnemyBulletG, _colorsData.EnemyBulletB, _colorsData.EnemyBulletA);
         public static Color LocalBullet => new Color(_colorsData.LocalBulletR, _colorsData.LocalBulletG, _colorsData.LocalBulletB, _colorsData.LocalBulletA);
