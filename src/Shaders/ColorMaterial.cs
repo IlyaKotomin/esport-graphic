@@ -22,9 +22,9 @@ namespace EsportGraphics.src.Shaders
         }
         public override void Apply()
         {
-            base.Apply();
             SetValue("overlay_color", _color);
             SetValue("greyStyle", _greyStyle);
+            base.Apply();
         }
     }
 }

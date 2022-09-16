@@ -15,7 +15,7 @@ namespace EsportGraphics.src
 {
     internal class DEBUG : UpdateAndDraw
     {
-        private Layer _layer = Layer.HUD;
+        private Layer _layer = Layer.Console;
 		public static bool downedItem;
 		private static PhysicsObject holdMouseItem;
         private static SpriteMap _cursors = new SpriteMap("cursors", 16, 16, false);
@@ -25,10 +25,14 @@ namespace EsportGraphics.src
             if (Keyboard.Pressed(Keys.Tab))
                 _enebled = !_enebled;
 
-            if (!Visible)
-                return;
+            if (Keyboard.Pressed(Keys.F5))
+            {
+                Level.current = new DrinkRoom(Level.current);
+            }
 
-            Grabber();
+            if (!Visible)
+                Grabber();
+
 
             if (Keyboard.Pressed(Keys.F8))
                 Config.ESOptions.Save();
@@ -68,7 +72,7 @@ namespace EsportGraphics.src
 
             StartDraw(_layer);
 
-            _cursors.position = Mouse.positionScreen;
+            _cursors.position = Mouse.position;
             
             if (holdMouseItem != null)
                 _cursors.frame = 5;

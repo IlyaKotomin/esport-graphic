@@ -42,6 +42,7 @@ namespace EsportGraphics.src.Shaders
             string name = "color";
             shadersCodes.Add(name, effect.GetEffectCode());
             mtEffects.Add(name, new MTEffect(new Effect(Graphics.device, ShaderLoader.shadersCodes[name]), name));
+
         }
         private static string ColorFX()
         {
@@ -50,11 +51,17 @@ namespace EsportGraphics.src.Shaders
 @"sampler sprite;
 float greyStyle;
 float4 overlay_color;
+float4 black = float4(0, 0, 0, 1);
 float4 PixelShaderFunction(float2 uv: TEXCOORD0, float4 c: COLOR0) : COLOR0
 {
     float4 col = tex2D(sprite, uv);
     
-    if(greyStyle == 1)
+    if (all(col == black))
+    {
+        return col;
+    }
+
+    if (greyStyle == 1)
     {
         col.rgb = (col.r + col.g + col.b) / 3;
     }

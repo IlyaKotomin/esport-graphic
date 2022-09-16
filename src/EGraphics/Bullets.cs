@@ -22,7 +22,7 @@ namespace EsportGraphics.src.EGraphics
             if (!ESSettings.BulletColorChanger)
                 return;
 
-            foreach (Bullet bullet in Utilites.AvailableThings(typeof(Bullet)))
+            foreach (Bullet bullet in AvailableThings<Bullet>())
             {
                 if (bullet == null)
                     return;

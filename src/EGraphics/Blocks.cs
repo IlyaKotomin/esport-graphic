@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using DuckGame;
 using EsportGraphics.src.Core;
+using EsportGraphics.src.Shaders;
 using static EsportGraphics.src.Core.Utilites;
 
 namespace EsportGraphics.src.EGraphics
@@ -25,9 +27,15 @@ namespace EsportGraphics.src.EGraphics
         }
         public override void Update()
         {
-            foreach (Block block in AvailableThings(typeof(Block)))
-                if(block is IPlatform)
-                    block.material = new Shaders.ColorMaterial(ESColors.Blocks);
+            foreach (AutoBlock block in AvailableThings<AutoBlock>())
+                block.material = new ColorMaterial(ESColors.Blocks, true);
+
+            foreach (Thing platform in AvailableThings<Thing>())
+                if (platform is IPlatform && platform is not PhysicsObject && platform is not Block)
+                    platform.material = new ColorMaterial(ESColors.Blocks, true);
+
+            //foreach(BackgroundTile thing in AvailableThings(typeof(BackgroundTile)))
+            //    Level.Remove(thing);
         }
     }
 }

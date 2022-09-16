@@ -90,6 +90,7 @@
     <Compile Include="src\EGraphics\Bullets.cs" />
     <Compile Include="src\EGraphics\Ducks.cs" />
     <Compile Include="src\EGraphics\ESColors.cs" />
+    <Compile Include="src\EGraphics\ESLoadingCircle.cs" />
     <Compile Include="src\EGraphics\ESSettings.cs" />
     <Compile Include="src\EGraphics\ESMaterials.cs" />
     <Compile Include="src\EsportCamera.cs" />
