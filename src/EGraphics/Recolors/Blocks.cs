@@ -9,7 +9,7 @@ using EsportGraphics.src.Core;
 using EsportGraphics.src.Shaders;
 using static EsportGraphics.src.Core.Utilites;
 
-namespace EsportGraphics.src.EGraphics
+namespace EsportGraphics.src.EGraphics.Recolors
 {
     internal class Blocks : UpdateAndDraw
     {

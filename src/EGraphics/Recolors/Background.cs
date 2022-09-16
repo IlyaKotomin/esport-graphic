@@ -2,7 +2,7 @@
 using DuckGame;
 using EsportGraphics.src.Core;
 
-namespace EsportGraphics.src.EGraphics
+namespace EsportGraphics.src.EGraphics.Recolors
 {
     internal class Background : UpdateAndDraw
     {

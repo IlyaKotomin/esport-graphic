@@ -4,7 +4,7 @@ using static EsportGraphics.src.Core.Utilites;
 using System.Reflection;
 using System;
 
-namespace EsportGraphics.src.EGraphics
+namespace EsportGraphics.src.EGraphics.Recolors
 {
     internal class Ducks : UpdateAndDraw
     {

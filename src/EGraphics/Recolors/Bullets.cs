@@ -3,7 +3,7 @@ using System.Reflection;
 using EsportGraphics.src.Core;
 using static EsportGraphics.src.Core.Utilites;
 
-namespace EsportGraphics.src.EGraphics
+namespace EsportGraphics.src.EGraphics.Recolors
 {
     internal class Bullets : UpdateAndDraw
     {

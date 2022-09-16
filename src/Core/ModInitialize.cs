@@ -12,11 +12,11 @@ namespace EsportGraphics.src
     {
         public static void PreInitialize()
         {
-            //Cursor.Show();
+            DependencyResolver.ResolveDependencies();
+            Config.Config.LoadAll();
         }
         public static void PostInitialize()
         {
-            AppDomain.CurrentDomain.AssemblyResolve += OnAssemblyResolve;
             Config.ESOptions.Load();
             Shaders.ShaderLoader.Load();
             UpdateAndDraw.Initialize();
