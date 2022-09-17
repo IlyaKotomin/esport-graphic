@@ -13,7 +13,7 @@ namespace EsportGraphics.src.EGraphics.Recolors
                 return;
 
             foreach (DuckGame.Spikes spikes in AvailableThings<DuckGame.Spikes>())
-                spikes.material = Shaders.ColorMaterial(ESColors["Spikes"]);
+                spikes.material = new Shaders.ColorMaterial(ESColors["Spikes"]);
         }
     }
 }
