@@ -79,10 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\Config\ColorsData.cs" />
-    <Compile Include="src\Config\Config.cs" />
-    <Compile Include="src\Config\ESOptions.cs" />
-    <Compile Include="src\Config\SettingsData.cs" />
+    <Compile Include="src\Config\ESConfig.cs" />
     <Compile Include="src\Core\Assemblyes.cs" />
     <Compile Include="src\Core\DependencyResolver.cs" />
     <Compile Include="src\Core\UpdateAndDraw.cs" />
@@ -95,10 +92,12 @@
     <Compile Include="src\EGraphics\Recolors\Bullets.cs" />
     <Compile Include="src\EGraphics\Recolors\Doors.cs" />
     <Compile Include="src\EGraphics\Recolors\Ducks.cs" />
-    <Compile Include="src\EGraphics\ESColors.cs" />
-    <Compile Include="src\EGraphics\ESLoadingCircle.cs" />
-    <Compile Include="src\EGraphics\ESSettings.cs" />
-    <Compile Include="src\EGraphics\ESMaterials.cs" />
+    <Compile Include="src\EGraphics\ESProgressBars.cs" />
+    <Compile Include="src\EGraphics\Recolors\Spikes.cs" />
+    <Compile Include="src\EGraphics\Timers\ItemBoxesPB.cs" />
+    <Compile Include="src\EGraphics\Timers\ItemSpawnersPB.cs" />
+    <Compile Include="src\EGraphics\Xray\ItemBoxesXray.cs" />
+    <Compile Include="src\EGraphics\Xray\PresentsXray.cs" />
     <Compile Include="src\EsportCamera.cs" />
     <Compile Include="src\Shaders\ColorMaterial.cs" />
     <Compile Include="src\Shaders\Context.cs" />
@@ -107,6 +106,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

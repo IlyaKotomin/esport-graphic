@@ -1,15 +1,6 @@
 ﻿using DuckGame;
 using EsportGraphics.src.Core;
-using EsportGraphics.src.Config;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Net;
-using System.IO;
-using System;
-using Microsoft.Xna.Framework.Graphics;
 using static EsportGraphics.src.Core.Utilites;
-using EsportGraphics.src.EGraphics;
 
 namespace EsportGraphics.src
 {
@@ -32,13 +23,6 @@ namespace EsportGraphics.src
 
             if (!Visible)
                 Grabber();
-
-
-            if (Keyboard.Pressed(Keys.F8))
-                Config.ESOptions.Save();
-
-            if (Keyboard.Pressed(Keys.F9))
-                Config.ESOptions.Load();
         }
 
         private static void Grabber()
@@ -86,7 +70,9 @@ namespace EsportGraphics.src
                 var nearestObject = Level.Nearest<PhysicsObject>(Mouse.positionScreen);
 
                 if (nearestObject != null)
-                    Graphics.DrawLine(nearestObject.rectangle.Center, Mouse.positionScreen, ESColors.Blocks);
+                    Graphics.DrawLine(nearestObject.rectangle.Center,
+                        Mouse.positionScreen,
+                        Config.ESConfig.ESColors["Blocks"]);
             }
 
             StopDraw(_layer);

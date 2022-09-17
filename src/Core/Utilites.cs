@@ -25,5 +25,12 @@ namespace EsportGraphics.src.Core
 
             return ducks;
         }
+        public static Vec2 LineCenter(Vec2 p1, Vec2 p2, float pos)
+        {
+            float Xc = (p1.x + p2.x) * pos;
+            float Yc = (p1.y + p2.y) * pos;
+
+            return new Vec2(Xc, Yc);
+        }
     }
 }

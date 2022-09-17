@@ -12,12 +12,13 @@ namespace EsportGraphics.src
     {
         public static void PreInitialize()
         {
+            MonoMain.noIntro = true;
+
             DependencyResolver.ResolveDependencies();
-            Config.Config.LoadAll();
+            Config.ESConfig.LoadAll();
         }
         public static void PostInitialize()
         {
-            Config.ESOptions.Load();
             Shaders.ShaderLoader.Load();
             UpdateAndDraw.Initialize();
         }

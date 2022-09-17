@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using static Config.ESConfig;
 using DuckGame;
 using EsportGraphics.src.Core;
 using EsportGraphics.src.Shaders;
@@ -14,12 +10,14 @@ namespace EsportGraphics.src.EGraphics.Recolors
     {
         public override void Update()
         {
+            if (Settings["Doors"])
+
             foreach (Door door in AvailableThings<Door>())
             {
                 if (door._open == 1f || door._open == -1f)
-                    door.material = new ColorMaterial(ESColors.OpenedDoor, true);
+                    door.material = new ColorMaterial(ESColors["DoorOpened"], true);
                 else
-                    door.material = new ColorMaterial(ESColors.ClosedDoor, true);
+                    door.material = new ColorMaterial(ESColors["DoorClosed"], true);
             }
         }
     }

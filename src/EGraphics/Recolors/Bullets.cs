@@ -1,5 +1,5 @@
 ﻿using DuckGame;
-using System.Reflection;
+using static Config.ESConfig;
 using EsportGraphics.src.Core;
 using static EsportGraphics.src.Core.Utilites;
 
@@ -12,14 +12,15 @@ namespace EsportGraphics.src.EGraphics.Recolors
         {
             StartDraw(_layer);
 
-            foreach (Net net in Level.current.things[typeof(Net)])
-                Graphics.DrawRect(net.topLeft, net.bottomRight, ESColors.EnemyHitBoxes);
+            if(Settings["Bullets"])
+                foreach (Net net in Level.current.things[typeof(Net)])
+                    Graphics.DrawRect(net.topLeft, net.bottomRight, ESColors["EnemyBullet"]);
 
             StopDraw(_layer);
         }
         public override void Update()
         {
-            if (!ESSettings.BulletColorChanger)
+            if (!Settings["Bullets"])
                 return;
 
             foreach (Bullet bullet in AvailableThings<Bullet>())
@@ -29,10 +30,10 @@ namespace EsportGraphics.src.EGraphics.Recolors
 
                 if (bullet.owner != null && bullet.owner.isLocal && bullet is not GrenadeBullet)
                 {
-                    bullet.color = ESColors.LocalBullet;
+                    bullet.color = ESColors["LocalBullet"];
                 }
                 else
-                    bullet.color = ESColors.EnemyBullet;
+                    bullet.color = ESColors["EnemyBullet"];
             }
         }
     }
