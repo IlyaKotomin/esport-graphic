@@ -34,7 +34,7 @@ namespace EsportGraphics.src.UI.Components
             _arrow = new UIImage("contextArrowRight", UIAlign.Left);
             _arrow.align = UIAlign.Right;
             _arrow.visible = false;
-            leftSection.Add(_arrow, true);
+            leftSection.Add(this._arrow, true);
 
             controlString = "@CANCEL@BACK @WASD@ADJUST";
             rightSection.Add(splitter, true);
@@ -49,6 +49,8 @@ namespace EsportGraphics.src.UI.Components
             {
                 _value--;
             }
+
+            _textValue.text = _value.ToString();
 
             UpdateColorConfig(_part);
         }
