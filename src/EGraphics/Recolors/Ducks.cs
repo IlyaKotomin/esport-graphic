@@ -2,6 +2,7 @@
 using EsportGraphics.src.Core;
 using static EsportGraphics.src.Core.Utilites;
 using static Config.ESConfig;
+using System.Linq;
 
 namespace EsportGraphics.src.EGraphics.Recolors
 {
@@ -24,22 +25,21 @@ namespace EsportGraphics.src.EGraphics.Recolors
                 if (!duck.isLocal)
                     duck.blendColor = ESColors["EnemyDuck"];
 
-            foreach (Ragdoll ragdoll in AvailableThings<Ragdoll>())
+            foreach (var ragdoll in from Ragdoll ragdoll in AvailableThings<Ragdoll>()
+                                    where ragdoll._duck != null
+                                    select ragdoll)
             {
-                if (ragdoll._duck != null)
-                { 
-                    if (!ragdoll._duck.isLocal && !ragdoll._duck.dead)
-                    {
-                        ragdoll.part1.material = new Shaders.ColorMaterial(ESColors["EnemyDuck"], true);
-                        ragdoll.part2.material = new Shaders.ColorMaterial(ESColors["EnemyDuck"], true);
-                        ragdoll.part3.material = new Shaders.ColorMaterial(ESColors["EnemyDuck"], true);
-                    }
-                    else if (ragdoll._duck.dead)
-                    {
-                        ragdoll.part1.material = new Shaders.ColorMaterial(ESColors["Back"], true);
-                        ragdoll.part2.material = new Shaders.ColorMaterial(ESColors["Back"], true);
-                        ragdoll.part3.material = new Shaders.ColorMaterial(ESColors["Back"], true);
-                    }
+                if (!ragdoll._duck.isLocal && !ragdoll._duck.dead)
+                {
+                    ragdoll.part1.material = new Shaders.ColorMaterial(ESColors["EnemyDuck"]);
+                    ragdoll.part2.material = new Shaders.ColorMaterial(ESColors["EnemyDuck"]);
+                    ragdoll.part3.material = new Shaders.ColorMaterial(ESColors["EnemyDuck"]);
+                }
+                else if (ragdoll._duck.dead)
+                {
+                    ragdoll.part1.material = new Shaders.ColorMaterial(ESColors["Back"]);
+                    ragdoll.part2.material = new Shaders.ColorMaterial(ESColors["Back"]);
+                    ragdoll.part3.material = new Shaders.ColorMaterial(ESColors["Back"]);
                 }
             }
         }

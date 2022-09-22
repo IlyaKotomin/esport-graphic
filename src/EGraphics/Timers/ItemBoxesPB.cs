@@ -18,7 +18,7 @@ namespace EsportGraphics.src.EGraphics.Timers
             foreach (ItemBox itemBox in AvailableThings<ItemBox>())
                 if(itemBox is not PurpleBlock)
                     ESProgressBars.DrawLineBar(
-                        itemBox.topLeft,
+                        itemBox.bottomLeft,
                         itemBox.bottomRight.x - itemBox.bottomLeft.x,
                         1f - ((float)itemBox.charging / 500),
                         ESColors["BarFront"] * Floats["BarsAlpha"],

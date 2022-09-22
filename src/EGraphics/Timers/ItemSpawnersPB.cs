@@ -28,7 +28,7 @@ namespace EsportGraphics.src.EGraphics.Timers
                 {
                     float lengh = (spawner.bottomRight.x - spawner.bottomLeft.x);
 
-                    ESProgressBars.DrawLineBar(spawner.topLeft,
+                    ESProgressBars.DrawLineBar(spawner.bottomLeft,
                                                lengh,
                                                spawner._spawnWait / spawner.spawnTime,
                                                ESColors["BarFront"] * Floats["BarsAlpha"],

@@ -14,10 +14,10 @@ namespace EsportGraphics.src.Shaders
     {
         private Color _color;
         private float _greyStyle;
-        public ColorMaterial(Color color, bool greyStyle = false)
+        public ColorMaterial(Color color)
         {
             _color = color;
-            _greyStyle = Convert.ToSingle(greyStyle);
+            _greyStyle = Convert.ToSingle(Config.ESConfig.Settings["GreyStyle"]);
             _effect = ShaderLoader.mtEffects["color"];
         }
         public override void Apply()

@@ -15,9 +15,9 @@ namespace EsportGraphics.src.EGraphics.Recolors
             foreach (Door door in AvailableThings<Door>())
             {
                 if (door._open == 1f || door._open == -1f)
-                    door.material = new ColorMaterial(ESColors["DoorOpened"], true);
+                    door.material = new ColorMaterial(ESColors["DoorOpened"]);
                 else
-                    door.material = new ColorMaterial(ESColors["DoorClosed"], true);
+                    door.material = new ColorMaterial(ESColors["DoorClosed"]);
             }
         }
     }

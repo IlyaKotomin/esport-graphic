@@ -44,19 +44,26 @@ namespace EsportGraphics.src.Core
         public event EventHandler<EventArgs> DrawOrderChanged;
         public void Draw(GameTime gameTime)
         {
-            Graphics.screen.Begin(SpriteSortMode.BackToFront,
-                                  BlendState.NonPremultiplied,
-                                  SamplerState.PointClamp,
-                                  DepthStencilState.Default,
-                                  RasterizerState.CullNone,
-                                  null,
-                                  Microsoft.Xna.Framework.Matrix.Identity);
+            if (Level.current is not RockScoreboard or TeamSelect2 && DuckNetwork.active)
+            {
+                Graphics.screen.Begin(SpriteSortMode.BackToFront,
+                                      BlendState.NonPremultiplied,
+                                      SamplerState.PointClamp,
+                                      DepthStencilState.Default,
+                                      RasterizerState.CullNone,
+                                      null,
+                                      Microsoft.Xna.Framework.Matrix.Identity);
 
-            Draw();
-            Graphics.screen.End();
+                Draw();
+                Graphics.screen.End();
+            }
         }
         public virtual void Draw() { }
-        public void Update(GameTime gameTime) => Update();
-        public virtual void Update() {}
+        public void Update(GameTime gameTime)
+        {
+            if (Level.current is not RockScoreboard or TeamSelect2 && DuckNetwork.active)
+                Update();
+        }
+        public virtual void Update() { }
     }
 }

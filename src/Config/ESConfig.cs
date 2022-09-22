@@ -14,14 +14,18 @@ namespace Config
         private const string ColorsFile = "EsportsGraphicsColors.json";
         private const string SettingsFile = "EsportsGraphicsSettings.json";
         private const string FloatsFile = "EsportsGraphicsFloats.json";
+        private const string IntsFile = "EsportsGraphicsInts.json";
+
         public static Dictionary<string, Color> ESColors;
         public static Dictionary<string, bool> Settings;
         public static Dictionary<string, float> Floats;
+        public static Dictionary<string, int> Ints;
         public static void LoadAll()
         {
             Load(ref Settings, SettingsFile);
             Load(ref ESColors, ColorsFile);
             Load(ref Floats, FloatsFile);
+            Load(ref Ints, IntsFile);
         }
         public static void SaveAll()
         {
@@ -44,6 +48,9 @@ namespace Config
                 case FloatsFile:
                     Save(DefaultFloats, FloatsFile);
                     return DefaultFloats;
+                case IntsFile:
+                    Save(DefaultInts, IntsFile);
+                    return DefaultInts;
                 default:
                     return null;
             }
@@ -60,11 +67,15 @@ namespace Config
             {"BarFront", Color.Green },
             {"EnemyBullet", Color.Red },
             {"EnemyDuck", Color.Pink },
-            {"LocalBullet", Color.Green }
-
+            {"LocalBullet", Color.Green },
+            {"AmmoCounterFront", Color.White },
+            {"AmmoCounterBack", Color.Black },
+            {"TampedGun", Color.Green },
+            {"UnTampedGun", Color.Red }
         };
         private static Dictionary<string, bool> DefaultSettings = new Dictionary<string, bool>()
         {
+            {"GreyStyle", true },
             {"Back", true },
             {"Blocks", true},
             {"Spikes", true },
@@ -74,12 +85,34 @@ namespace Config
             {"ItemSpawnerBar", true },
             {"ItemBoxBar", true },
             {"AmmoCounter", true },
-            {"Xray", true }
+            {"Xray", true },
+            {"TampingWeapons", true }
         };
         private static Dictionary<string, float> DefaultFloats = new Dictionary<string, float>()
         {
             {"BarsAlpha", 0.75f},
-            {"XrayAlpha", 0.75f}
+            {"XrayAlpha", 0.75f},
+            {"AmmoCounterScale", 1f},
+            {"AmmoCounterOffsetX", 0f},
+            {"AmmoCounterOffsetY", 0f},
+        };
+        private static Dictionary<string, int> DefaultInts = new Dictionary<string, int>()
+        {
+            {"AmmoCounterFont", 0},
+        };
+        public static string[] Fonts = new string[]
+        {
+            "biosFont",
+            "moneyFont",
+            "duckFont",
+            "kanji_font",
+            "furni\\quietFont",
+            "furni\\ornateFont",
+            "furni\\tinyFont",
+            "furni\\handstandFont",
+            "furni\\widefont",
+            "furni\\italFont",
+
         };
         public static void Save<Key, Value>(Dictionary<Key, Value> pairs, string path) => File.WriteAllText(path, JsonConvert.SerializeObject(pairs));
     }

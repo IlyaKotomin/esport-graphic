@@ -87,6 +87,7 @@
     <Compile Include="src\Core\EsportGraphicsMod.cs" />
     <Compile Include="src\Core\Utilites.cs" />
     <Compile Include="src\DEBUG.cs" />
+    <Compile Include="src\EGraphics\Counters\AmmoCounter.cs" />
     <Compile Include="src\EGraphics\Recolors\Background.cs" />
     <Compile Include="src\EGraphics\Recolors\Blocks.cs" />
     <Compile Include="src\EGraphics\Recolors\Bullets.cs" />
@@ -102,6 +103,13 @@
     <Compile Include="src\Shaders\ColorMaterial.cs" />
     <Compile Include="src\Shaders\Context.cs" />
     <Compile Include="src\Shaders\ShaderLoader.cs" />
+    <Compile Include="src\UI\Items\UIColorPicker.cs" />
+    <Compile Include="src\UI\Items\UIOnOffCustom.cs" />
+    <Compile Include="src\UI\Items\UIToggle.cs" />
+    <Compile Include="src\UI\UIEsportGraphicsMenu.cs" />
+    <Compile Include="src\UI\UIHandler.cs" />
+    <Compile Include="src\UI\UIMenuColors.cs" />
+    <Compile Include="src\UI\UIMenuSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

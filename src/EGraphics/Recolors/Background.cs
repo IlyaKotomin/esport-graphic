@@ -16,8 +16,22 @@ namespace EsportGraphics.src.EGraphics.Recolors
                 Level.current.backgroundColor = ESColors["Back"];
 
             foreach (Thing t in Level.current.things)
-                if (!IsParticle(t) && t is not GinormoBoard && t is not Block && t is not RagdollPart && t is not SmallFire && t is not DizzyStar && t is not ExplosionPart && t is not IPlatform && t is not Fluid && t is not Spring && t is not PhysicsObject && t is not Bullet && t is not QuadLaserBullet)
-                    t.material = new Shaders.ColorMaterial(ESColors["Back"], true);
+                if (!IsParticle(t)
+                    && t is not GinormoBoard
+                    && t is not Block
+                    && t is not RagdollPart
+                    && t is not SmallFire
+                    && t is not DizzyStar
+                    && t is not StarGoody
+                    && t is not ExplosionPart
+                    && t is not IPlatform
+                    && t is not Fluid
+                    && t is not Spring
+                    && t is not DuckGame.Spikes
+                    && t is not PhysicsObject
+                    && t is not Bullet
+                    && t is not QuadLaserBullet)
+                    t.material = new Shaders.ColorMaterial(ESColors["Back"]);
         }
         private static bool IsParticle(Thing obj)
         {

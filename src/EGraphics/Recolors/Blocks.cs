@@ -14,11 +14,11 @@ namespace EsportGraphics.src.EGraphics.Recolors
                 return;
 
             foreach (AutoBlock block in AvailableThings<AutoBlock>())
-                block.material = new ColorMaterial(ESColors["Blocks"], true);
+                block.material = new ColorMaterial(ESColors["Blocks"]);
 
             foreach (Thing platform in AvailableThings<Thing>())
                 if (platform is IPlatform && platform is not PhysicsObject && platform is not Block)
-                    platform.material = new ColorMaterial(ESColors["Blocks"], true);
+                    platform.material = new ColorMaterial(ESColors["Blocks"]);
 
             //foreach(BackgroundTile thing in AvailableThings(typeof(BackgroundTile)))
             //    Level.Remove(thing);
