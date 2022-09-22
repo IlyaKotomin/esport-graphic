@@ -37,17 +37,15 @@ namespace EsportGraphics.src.EGraphics
 			Vec2 boxTl = new Vec2(start.x - width, start.y - width);
 			Vec2 boxBr = new Vec2(end.x + width, end.y + width);
 
-            try
-            {
-				Graphics.DrawRect(boxTl, boxBr, outlineColor, depth, false, width);
-            }
-            finally
-            {
-				Graphics.DrawLine(start, end, backColor, width, depth + 1);
+			Graphics.DrawRect(boxTl, boxBr, outlineColor, depth, false, width);
+			Graphics.DrawLine(start, end, backColor, width, depth + 1);
 
-				Vec2 progressPos = new Vec2(start.x + (lengh * percentages), start.y);
-				Graphics.DrawLine(start, progressPos, frontColor, width, depth + 2);
-            }
+			Vec2 progressPos = new Vec2(start.x + (lengh * percentages), start.y);
+
+            if (progressPos.x > end.x)
+				progressPos.x = end.x;
+
+			Graphics.DrawLine(start, progressPos, frontColor, width, depth + 2);
 		}
 	}
 }
