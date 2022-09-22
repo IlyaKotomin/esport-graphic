@@ -42,7 +42,7 @@ namespace EsportGraphics.src.EGraphics
 
 			Vec2 progressPos = new Vec2(start.x + (lengh * percentages), start.y);
 
-            if (progressPos.x > end.x)
+            if  (progressPos.x > end.x)
 				progressPos.x = end.x;
 
 			Graphics.DrawLine(start, progressPos, frontColor, width, depth + 2);

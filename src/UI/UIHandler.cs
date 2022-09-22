@@ -14,7 +14,10 @@ namespace EsportGraphics.src.UI
         public override void Update()
         {
             if (Keyboard.Pressed(Keys.F7))
-                new UIEsportGraphicsMenu(new UIMenuSettings(), new UIMenuColors(Config.ESConfig.ESColors)).Open();
+            {
+                var menu = new UIEsportGraphicsMenu();
+                menu.Open();
+            }
         }
     }
 }

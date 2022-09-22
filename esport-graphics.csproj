@@ -106,10 +106,11 @@
     <Compile Include="src\UI\Componets\UIColorPicker.cs" />
     <Compile Include="src\UI\Componets\UIOnOffCustom.cs" />
     <Compile Include="src\UI\Componets\UIToggle.cs" />
-    <Compile Include="src\UI\UIEsportGraphicsMenu.cs" />
+    <Compile Include="src\UI\Menu\UISaveSettings.cs" />
+    <Compile Include="src\UI\Menu\UIEsportGraphicsMenu.cs" />
     <Compile Include="src\UI\UIHandler.cs" />
-    <Compile Include="src\UI\UIMenuColors.cs" />
-    <Compile Include="src\UI\UIMenuSettings.cs" />
+    <Compile Include="src\UI\Menu\UIMenuColors.cs" />
+    <Compile Include="src\UI\Menu\UIMenuSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

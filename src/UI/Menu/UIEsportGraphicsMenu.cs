@@ -10,7 +10,7 @@ namespace EsportGraphics.src.UI
 {
     internal class UIEsportGraphicsMenu : UIMenu
     {
-        public UIEsportGraphicsMenu(UIMenuSettings menuSettings, UIMenuColors menuColors) : base("@LWING@Esport Graphics@RWING@",
+        public UIEsportGraphicsMenu() : base("@LWING@Esport Graphics@RWING@",
                                              Layer.HUD.camera.width / 2f,
                                              Layer.HUD.camera.height / 2f,
                                              190f,
@@ -19,9 +19,11 @@ namespace EsportGraphics.src.UI
                                              null,
                                              false)
         {
-            Add(new UIMenuItem("Settings", new UIMenuActionOpenMenu(this, menuSettings)));
+            Add(new UIMenuItem("Settings", new UIMenuActionOpenMenu(this, new UIMenuSettings())));
             Add(new UIMenuItem("Colors"));
             Add(new UIMenuItem("Ammo Counter Font"));
+
+            SetBackFunction(new UIMenuActionOpenMenu(this, new UISaveSettings()));
         }
         public override void Open()
         {
