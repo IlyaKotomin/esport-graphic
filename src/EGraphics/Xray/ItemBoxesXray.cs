@@ -11,11 +11,6 @@ namespace EsportGraphics.src.EGraphics.Xray
     internal class ItemBoxesXray : UpdateAndDraw
     {
         private Layer _layer = Layer.Blocks;
-        public override void Update()
-        {
-            if (Keyboard.Pressed(Keys.P))
-                Level.Add(new ItemBoxRandom(Mouse.x, Mouse.y));
-        }
         public override void Draw()
         {
             if (!Settings["Xray"])
@@ -30,7 +25,7 @@ namespace EsportGraphics.src.EGraphics.Xray
                     Sprite _containedSprite = box.containedObject.graphic;
                     _containedSprite.alpha = Floats["XrayAlpha"];
                     _containedSprite.CenterOrigin();
-                    Graphics.Draw(_containedSprite, box.x, box.y - 20);
+                    Graphics.Draw(_containedSprite, box.x, box.y);
                 }
             }
 
