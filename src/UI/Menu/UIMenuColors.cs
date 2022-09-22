@@ -1,4 +1,5 @@
 ﻿using DuckGame;
+using EsportGraphics.src.UI.Componets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,24 +8,18 @@ using System.Threading.Tasks;
 
 namespace EsportGraphics.src.UI
 {
-    internal class UIMenuColors : UIMenu
+    internal class UIMenuColors : UIMenuESG
     {
-        public UIMenuColors(Dictionary<string, Color> colors) : base("@LWING@ESG Colors@RWING@",
-                                             Layer.HUD.camera.width / 2f,
-                                             Layer.HUD.camera.height / 2f,
-                                             190f,
-                                             -1f,
-                                             "@DPAD@ADJUST @QUACK@BACK",
-                                             null,
-                                             false)
+        public UIMenuColors(string name = "ESG Colors") : base(name)
         {
-            //Level.Add(this);
-            //_colors = colors;
-            //LoadColors();
-
+            GenerateColors();
         }
-        private void LoadColors()
+        private void GenerateColors()
         {
+            foreach (var pair in Config.ESConfig.ESColors)
+            {
+                Add(new UIMenuItem(pair.Key ,new UIMenuActionOpenMenu(this, new UIMenuColorPicker(pair.Key, this))));
+            }
         }
     }
 }

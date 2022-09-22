@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace EsportGraphics.src.UI
 {
-    internal class UIEsportGraphicsMenu : UIMenu
+    internal class UIMenuMain : UIMenu
     {
-        public UIEsportGraphicsMenu() : base("@LWING@Esport Graphics@RWING@",
+        public UIMenuMain() : base("@LWING@Esport Graphics@RWING@",
                                              Layer.HUD.camera.width / 2f,
                                              Layer.HUD.camera.height / 2f,
                                              190f,
@@ -20,10 +20,10 @@ namespace EsportGraphics.src.UI
                                              false)
         {
             Add(new UIMenuItem("Settings", new UIMenuActionOpenMenu(this, new UIMenuSettings())));
-            Add(new UIMenuItem("Colors"));
+            Add(new UIMenuItem("Colors", new UIMenuActionOpenMenu(this, new UIMenuColors())));
             Add(new UIMenuItem("Ammo Counter Font"));
 
-            SetBackFunction(new UIMenuActionOpenMenu(this, new UISaveSettings()));
+            SetBackFunction(new UIMenuActionOpenMenu(this, new UIMenuSaveSettings()));
         }
         public override void Open()
         {

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace EsportGraphics.src.UI
 {
-    internal class UISaveSettings : UIMenu
+    internal class UIMenuSaveSettings : UIMenu
     {
-        public UISaveSettings() : base("@LWING@Esport Graphics@RWING@",
+        public UIMenuSaveSettings() : base("Esport Graphics",
                                              Layer.HUD.camera.width / 2f,
                                              Layer.HUD.camera.height / 2f,
                                              190f,

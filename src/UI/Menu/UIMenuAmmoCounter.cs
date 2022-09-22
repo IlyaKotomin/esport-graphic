@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EsportGraphics.src.UI.Components
+namespace EsportGraphics.src.UI.Menu
 {
-    internal class UIColorPicker
+    internal class UIMenuAmmoCounter
     {
     }
 }

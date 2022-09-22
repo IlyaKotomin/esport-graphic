@@ -15,7 +15,7 @@ namespace EsportGraphics.src.UI
         {
             if (Keyboard.Pressed(Keys.F7))
             {
-                var menu = new UIEsportGraphicsMenu();
+                var menu = new UIMenuMain();
                 menu.Open();
             }
         }
