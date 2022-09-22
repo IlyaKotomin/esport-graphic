@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using static Config.ESConfig;
 using System.Threading.Tasks;
+using EsportGraphics.src.UI.Components;
 
 namespace EsportGraphics.src.UI
 {
@@ -24,11 +25,7 @@ namespace EsportGraphics.src.UI
         private void GenerateSettings()
         {
             foreach (var pair in Settings)
-                Add(new Items.UIToggle(pair));        
-        }
-        private void ChangeSetting(string name, UIMenuItem parent)
-        {
-            Settings[name] = !Settings[name];
+                Add(new UIToggle(pair));
         }
     }
 }

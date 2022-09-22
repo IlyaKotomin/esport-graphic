@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EsportGraphics.src.UI
+namespace EsportGraphics.src.UI.Components
 {
     internal class UIColorPicker
     {

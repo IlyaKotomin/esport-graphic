@@ -44,9 +44,10 @@ namespace EsportGraphics.src.Core
         public event EventHandler<EventArgs> DrawOrderChanged;
         public void Draw(GameTime gameTime)
         {
-            if (Level.current is not RockScoreboard or TeamSelect2 && DuckNetwork.active)
-            {
-                Graphics.screen.Begin(SpriteSortMode.BackToFront,
+            if (Level.current is RockScoreboard or TeamSelect2 || !DuckNetwork.active || MonoMain.pauseMenu != null)
+                return;
+
+            Graphics.screen.Begin(SpriteSortMode.BackToFront,
                                       BlendState.NonPremultiplied,
                                       SamplerState.PointClamp,
                                       DepthStencilState.Default,
@@ -54,9 +55,8 @@ namespace EsportGraphics.src.Core
                                       null,
                                       Microsoft.Xna.Framework.Matrix.Identity);
 
-                Draw();
-                Graphics.screen.End();
-            }
+            Draw();
+            Graphics.screen.End();
         }
         public virtual void Draw() { }
         public void Update(GameTime gameTime)

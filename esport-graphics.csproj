@@ -103,9 +103,9 @@
     <Compile Include="src\Shaders\ColorMaterial.cs" />
     <Compile Include="src\Shaders\Context.cs" />
     <Compile Include="src\Shaders\ShaderLoader.cs" />
-    <Compile Include="src\UI\Items\UIColorPicker.cs" />
-    <Compile Include="src\UI\Items\UIOnOffCustom.cs" />
-    <Compile Include="src\UI\Items\UIToggle.cs" />
+    <Compile Include="src\UI\Componets\UIColorPicker.cs" />
+    <Compile Include="src\UI\Componets\UIOnOffCustom.cs" />
+    <Compile Include="src\UI\Componets\UIToggle.cs" />
     <Compile Include="src\UI\UIEsportGraphicsMenu.cs" />
     <Compile Include="src\UI\UIHandler.cs" />
     <Compile Include="src\UI\UIMenuColors.cs" />
