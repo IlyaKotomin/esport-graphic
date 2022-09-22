@@ -42,7 +42,7 @@ namespace EsportGraphics.src.EGraphics
         private void HandleNormalGuns()
         {
             foreach (var gun in from Gun gun in AvailableThings<Gun>()
-                                where !IsUncountebleGun(gun) && !gun.infinite
+                                where !IsUncountebleGun(gun) && !gun.infinite && gun.canPickUp
                                 select gun)
             {
                 Vec2 pos = (gun.offDir == 1) ?
