@@ -24,7 +24,7 @@ namespace EsportGraphics.src.EGraphics.Xray
                 Thing containedObject = Activator.CreateInstance(t, Editor.GetConstructorParameters(t)) as Thing;
 
                 Sprite _containedSprite = containedObject.graphic;
-                _containedSprite.alpha = Floats["XrayAlpha"];
+                _containedSprite.alpha = 0.75f;
                 _containedSprite.CenterOrigin();
                 Graphics.Draw(_containedSprite, present.x, present.y);
             }

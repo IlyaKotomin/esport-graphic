@@ -21,9 +21,9 @@ namespace EsportGraphics.src.EGraphics.Timers
                         itemBox.bottomLeft,
                         itemBox.bottomRight.x - itemBox.bottomLeft.x,
                         1f - ((float)itemBox.charging / 500),
-                        ESColors["BarFront"] * Floats["BarsAlpha"],
-                        ESColors["BarBack"] * Floats["BarsAlpha"],
-                        ESColors["BarOutLine"] * Floats["BarsAlpha"],
+                        ESColors["BarFront"],
+                        ESColors["BarBack"],
+                        ESColors["BarOutLine"],
                         2);
 
             StopDraw(_layer);

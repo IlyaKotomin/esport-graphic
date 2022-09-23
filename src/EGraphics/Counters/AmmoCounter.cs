@@ -45,14 +45,9 @@ namespace EsportGraphics.src.EGraphics
                                 where !IsUncountebleGun(gun) && !gun.infinite && gun.canPickUp
                                 select gun)
             {
-                Vec2 pos = (gun.offDir == 1) ?
-                    new Vec2(gun.position.x + 4, gun.position.y) :
-                    new Vec2(gun.position.x - (gun.topRight.x - gun.topLeft.x) + _font.GetWidth(gun.ammo.ToString()) - 4,
-                        gun.position.y);
-
                 _font.DrawOutline(
                     gun.ammo.ToString(),
-                    pos,
+                    gun.position,
                     ESColors["AmmoCounterFront"],
                     ESColors["AmmoCounterBack"]);
             }
@@ -66,9 +61,9 @@ namespace EsportGraphics.src.EGraphics
                     ESProgressBars.DrawLineBar(pos,
                                                10,
                                                (float)flameThrower.ammo / 100,
-                                               ESColors["BarFront"] * Floats["BarsAlpha"],
-                                               ESColors["BarBack"] * Floats["BarsAlpha"],
-                                               ESColors["BarOutLine"] * Floats["BarsAlpha"],
+                                               ESColors["BarFront"],
+                                               ESColors["BarBack"],
+                                               ESColors["BarOutLine"],
                                                2);
                 }
         }

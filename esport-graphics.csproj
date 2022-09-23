@@ -88,6 +88,7 @@
     <Compile Include="src\Core\Utilites.cs" />
     <Compile Include="src\DEBUG.cs" />
     <Compile Include="src\EGraphics\Counters\AmmoCounter.cs" />
+    <Compile Include="src\EGraphics\DrawRange.cs" />
     <Compile Include="src\EGraphics\Recolors\Background.cs" />
     <Compile Include="src\EGraphics\Recolors\Blocks.cs" />
     <Compile Include="src\EGraphics\Recolors\Bullets.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="src\UI\Components\ColorPart.cs" />
     <Compile Include="src\UI\Components\UIMenuColorPicker.cs" />
     <Compile Include="src\UI\Components\UIMenuESG.cs" />
+    <Compile Include="src\UI\Components\UIMenuItemCounter.cs" />
     <Compile Include="src\UI\Components\UIOnOffCustom.cs" />
     <Compile Include="src\UI\Components\UIToggle.cs" />
     <Compile Include="src\UI\Menu\UIMenuAmmoCounter.cs" />

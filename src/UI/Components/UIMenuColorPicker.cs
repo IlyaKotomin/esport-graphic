@@ -11,12 +11,7 @@ namespace EsportGraphics.src.UI.Componets
     internal class UIMenuColorPicker : UIMenu
     {
         private string rawName;
-        private UIMenuItemColorPart r;
-        private UIMenuItemColorPart g;
-        private UIMenuItemColorPart b;
-        private UIMenuItemColorPart a;
-        private UIText textElement;
-        public UIMenuColorPicker(string colorName, UIMenuColors closedMenu) : base("Color Picker",
+        public UIMenuColorPicker(string colorName, UIMenuColors closedMenu) : base(colorName,
                                              Layer.HUD.camera.width / 2f,
                                              Layer.HUD.camera.height / 2f,
                                              190f,
@@ -26,34 +21,34 @@ namespace EsportGraphics.src.UI.Componets
                                              false)
         {
             rawName = colorName;
-            textElement = new UIText(rawName, Color.White);
 
             Add(new UIText("", Color.White));
-            Add(textElement);
+            Add(new UIText("Press shift to +10", Color.Gray));
             Add(new UIText("", Color.White));
 
+            Add( new UIMenuItemColorPart("R", colorName, ColorPart.R));
+            Add( new UIMenuItemColorPart("G", colorName, ColorPart.G));
+            Add( new UIMenuItemColorPart("B", colorName, ColorPart.B));
+            Add( new UIMenuItemColorPart("A", colorName, ColorPart.A));
 
-            r = new UIMenuItemColorPart("R", colorName, ColorPart.R);
-            g = new UIMenuItemColorPart("g", colorName, ColorPart.G);
-            b = new UIMenuItemColorPart("b", colorName, ColorPart.B);
-            a = new UIMenuItemColorPart("a", colorName, ColorPart.A);
+            Add(new UIText("", Color.White));
 
-            Add(r);
-            Add(g);
-            Add(b);
-            Add(a);
-
-
-            try
-            {
-                SetBackFunction(new UIMenuActionOpenMenu(this, closedMenu));
-            }
-            catch (Exception) { }
+            SetBackFunction(new UIMenuActionOpenMenu(this, closedMenu));
         }
-        public override void Update()
+        public override void Draw()
         {
-            base.Update();
-            //textElement.text = $"|{r._value},{g._value},{b._value}|{rawName}";
+            base.Draw();
+
+            Graphics.DrawStringOutline("Preview:", new Vec2(x - halfWidth, y - halfHeight - 34), Color.LightGray, Color.Black);
+
+            Rectangle rectangle = new Rectangle(x - halfWidth, y - halfHeight - 23, width, 20);
+            Rectangle border = new Rectangle(new Vec2(rectangle.tl.x - 1, rectangle.tl.y - 1), new Vec2(rectangle.br.x + 1, rectangle.br.y + 1));
+            Graphics.DrawRect(rectangle, Config.ESConfig.ESColors[rawName]);
+            Graphics.DrawRect(border , Color.Black, borderWidth: 2, filled: false, depth: + 1);
+
+            Graphics.DrawRect(rectangle, Color.Gray, borderWidth: 3, filled: false, depth: + 2);
+            Graphics.DrawRect(rectangle, Color.DarkGray, borderWidth: 2, filled: false, depth: + 2);
+            Graphics.DrawRect(rectangle, Color.LightGray, borderWidth: 1, filled: false, depth: + 2);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace EsportGraphics.src.UI
 {
     internal class UIMenuColors : UIMenuESG
     {
-        public UIMenuColors(string name = "ESG Colors") : base(name)
+        public UIMenuColors(UIMenu closedMenu , string name = "ESG Colors") : base(name, closedMenu)
         {
             GenerateColors();
         }

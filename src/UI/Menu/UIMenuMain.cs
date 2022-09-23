@@ -1,4 +1,5 @@
 ﻿using DuckGame;
+using EsportGraphics.src.UI.Menu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,21 +20,24 @@ namespace EsportGraphics.src.UI
                                              null,
                                              false)
         {
-            Add(new UIMenuItem("Settings", new UIMenuActionOpenMenu(this, new UIMenuSettings())));
-            Add(new UIMenuItem("Colors", new UIMenuActionOpenMenu(this, new UIMenuColors())));
-            Add(new UIMenuItem("Ammo Counter Font"));
+            Add(new UIText("", Color.LightGray));
+            Add(new UIText("BASICS", Color.LightGray) { scale = new Vec2(1.3f) });
+            Add(new UIText("", Color.LightGray));
 
-            SetBackFunction(new UIMenuActionOpenMenu(this, new UIMenuSaveSettings()));
-        }
-        public override void Open()
-        {
-            var ducknetMenu = (UIMenu)typeof(DuckNetwork).GetField("_ducknetMenu", BindingFlags.NonPublic | BindingFlags.Static).GetValue(null);
+            Add(new UIMenuItem("Settings", new UIMenuActionOpenMenu(this, new UIMenuSettings(this))));
+            Add(new UIMenuItem("Colors", new UIMenuActionOpenMenu(this, new UIMenuColors(this))));
 
-            if (ducknetMenu != null)
-                ducknetMenu.Close();
+            Add(new UIText("", Color.LightGray));
+            Add(new UIText("OTHER", Color.LightGray) { scale = new Vec2(1.3f) });
+            Add(new UIText("", Color.LightGray));
 
-            Level.Add(this);
-            MonoMain.pauseMenu = this;
+            Add(new UIMenuItem("Ammo Counter", new UIMenuActionOpenMenu(this, new UIMenuAmmoCounter(this))));
+            Add(new UIMenuItem("Credits"));
+            Add(new UIMenuItem("Open Configs Folder"));
+
+            Add(new UIText("", Color.LightGray));
+
+            SetBackFunction(new UIMenuActionOpenMenu(this, new UIMenuSaveSettings(this)));
         }
     }
 }

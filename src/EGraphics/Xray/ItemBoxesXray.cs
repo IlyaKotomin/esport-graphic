@@ -23,7 +23,7 @@ namespace EsportGraphics.src.EGraphics.Xray
                 if (box is not PurpleBlock && box.containedObject != null)
                 {
                     Sprite _containedSprite = box.containedObject.graphic;
-                    _containedSprite.alpha = Floats["XrayAlpha"];
+                    _containedSprite.alpha = 0.75f;
                     _containedSprite.CenterOrigin();
                     Graphics.Draw(_containedSprite, box.x, box.y);
                 }

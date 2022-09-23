@@ -13,7 +13,7 @@ namespace EsportGraphics.src.UI
 {
     internal class UIMenuSettings : UIMenuESG
     {
-        public UIMenuSettings(string name = "ESG Settings") : base(name)
+        public UIMenuSettings(UIMenu closedMenu, string name = "ESG Settings") : base(name, closedMenu)
         {
             GenerateSettings();
         }

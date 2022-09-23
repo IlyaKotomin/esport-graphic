@@ -34,6 +34,10 @@ namespace EsportGraphics.src.Core
         public bool Enabled => true;
         public int UpdateOrder => 1;
 
+        public virtual bool NeedNetwork()
+        {
+            return true;
+        }
         public virtual bool Visible { get { return true; } set { } }
 
         public int DrawOrder => 1;
@@ -61,7 +65,9 @@ namespace EsportGraphics.src.Core
         public virtual void Draw() { }
         public void Update(GameTime gameTime)
         {
-            if (Level.current is not RockScoreboard or TeamSelect2 && DuckNetwork.active)
+            bool onNetwork = NeedNetwork() ? DuckNetwork.active : true;
+
+            if (Level.current is not RockScoreboard or TeamSelect2 && onNetwork)
                 Update();
         }
         public virtual void Update() { }

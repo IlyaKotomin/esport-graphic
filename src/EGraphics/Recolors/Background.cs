@@ -30,6 +30,8 @@ namespace EsportGraphics.src.EGraphics.Recolors
                     && t is not DuckGame.Spikes
                     && t is not PhysicsObject
                     && t is not Bullet
+                    && t is not Portal
+                    && t is not Drum
                     && t is not QuadLaserBullet)
                     t.material = new Shaders.ColorMaterial(ESColors["Back"]);
         }

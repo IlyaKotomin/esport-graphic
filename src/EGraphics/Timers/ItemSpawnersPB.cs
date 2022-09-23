@@ -31,9 +31,9 @@ namespace EsportGraphics.src.EGraphics.Timers
                     ESProgressBars.DrawLineBar(spawner.bottomLeft,
                                                lengh,
                                                spawner._spawnWait / spawner.spawnTime,
-                                               ESColors["BarFront"] * Floats["BarsAlpha"],
-                                               ESColors["BarBack"] * Floats["BarsAlpha"],
-                                               ESColors["BarOutLine"] * Floats["BarsAlpha"],
+                                               ESColors["BarFront"],
+                                               ESColors["BarBack"],
+                                               ESColors["BarOutLine"],
                                                2);
                 }
             }

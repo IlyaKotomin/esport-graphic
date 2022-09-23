@@ -71,7 +71,9 @@ namespace Config
             {"AmmoCounterFront", Color.White },
             {"AmmoCounterBack", Color.Black },
             {"TampedGun", Color.Green },
-            {"UnTampedGun", Color.Red }
+            {"UnTampedGun", Color.Red },
+            {"Range", Color.LightGreen },
+            {"RangeLaser", Color.LightGreen }
         };
         private static Dictionary<string, bool> DefaultSettings = new Dictionary<string, bool>()
         {
@@ -86,12 +88,12 @@ namespace Config
             {"ItemBoxBar", true },
             {"AmmoCounter", true },
             {"Xray", true },
-            {"TampingWeapons", true }
+            {"TampingWeapons", true },
+            {"Range", true },
+            {"RangeLaser", true }
         };
         private static Dictionary<string, float> DefaultFloats = new Dictionary<string, float>()
         {
-            {"BarsAlpha", 0.75f},
-            {"XrayAlpha", 0.75f},
             {"AmmoCounterScale", 1f},
             {"AmmoCounterOffsetX", 0f},
             {"AmmoCounterOffsetY", 0f},

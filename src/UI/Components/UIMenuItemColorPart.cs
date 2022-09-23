@@ -22,13 +22,14 @@ namespace EsportGraphics.src.UI.Components
             _max = max;
             _part = part;
             _colorName = colorName;
+            _value = GetColorValue(_part);
 
             UIDivider splitter = new UIDivider(true, 0f, 1f);
-            _uiText = new UIText(text, GetColor(_part), UIAlign.Center, 0f, null);
+            _uiText = new UIText(text, GetColor(_part), UIAlign.Left, 0f, null);
             _uiText.align = UIAlign.Left;
             splitter.leftSection.Add(_uiText, true);
 
-            _textValue = new UIText("0", Color.White, UIAlign.Right);
+            _textValue = new UIText(GetColorValue(_part).ToString(), Color.White, UIAlign.Right);
             splitter.rightSection.Add(_textValue, true);
 
             _arrow = new UIImage("contextArrowRight", UIAlign.Left);
@@ -38,16 +39,23 @@ namespace EsportGraphics.src.UI.Components
 
             controlString = "@CANCEL@BACK @WASD@ADJUST";
             rightSection.Add(splitter, true);
+
+            _textValue.anchor = this;
         }
         public override void Activate(string trigger)
         {
-            if (trigger == "MENURIGHT" && _value < _max)
+            int toChange = 1;
+            if(Keyboard.shift)
+                toChange = 10;
+
+
+            if (trigger == "MENURIGHT" && _value + toChange <= _max)
             {
-                _value++;
+                _value += toChange;
             }
-            else if(trigger == "MENULEFT" && _value > _min)
+            else if(trigger == "MENULEFT" && _value - toChange >= _min)
             {
-                _value--;
+                _value -= toChange;
             }
 
             _textValue.text = _value.ToString();
@@ -86,6 +94,17 @@ namespace EsportGraphics.src.UI.Components
             }
 
             Config.ESConfig.ESColors[_colorName] = color;
+        }
+        private int GetColorValue(ColorPart part)
+        {
+            return part switch
+            {
+                ColorPart.R => Config.ESConfig.ESColors[_colorName].r,
+                ColorPart.G => Config.ESConfig.ESColors[_colorName].g,
+                ColorPart.B => Config.ESConfig.ESColors[_colorName].b,
+                ColorPart.A => Config.ESConfig.ESColors[_colorName].a,
+                _ => Config.ESConfig.ESColors[_colorName].a
+            };
         }
     }
 }

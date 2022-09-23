@@ -9,27 +9,28 @@ namespace EsportGraphics.src.UI
 {
     internal class UIMenuSaveSettings : UIMenu
     {
-        public UIMenuSaveSettings() : base("Esport Graphics",
+        public UIMenuSaveSettings(UIMenu closedMenu) : base("Esport Graphics",
                                              Layer.HUD.camera.width / 2f,
                                              Layer.HUD.camera.height / 2f,
                                              190f,
                                              -1f,
-                                             "@DPAD@ADJUST @QUACK@SAVE",
+                                             "@DPAD@ADJUST @QUACK@BACK",
                                              null,
                                              false)
         {
-            Add(new UIText(" ", Color.White));
-            Add(new UIText("Save Settings?", Color.Pink));
-            Add(new UIText(" ", Color.White));
-
             var closeAndSave = new UIMenuActionCloseMenuCallFunction(this,
                 new UIMenuActionCloseMenuCallFunction.Function(Config.ESConfig.SaveAll));
 
+            Add(new UIText("", Color.LightGray));
+            Add(new UIText("Save Settings?", Color.LightGray) { scale = new Vec2(1.3f) });
+            Add(new UIText("", Color.LightGray));
+
             Add(new UIMenuItem("YES", closeAndSave, UIAlign.Center, Color.LimeGreen));
-
+            Add(new UIText("", Color.LightGray));
             Add(new UIMenuItem("NO", new UIMenuActionCloseMenu(this), UIAlign.Center, Color.Red));
+            Add(new UIText("", Color.LightGray));
 
-            SetBackFunction(closeAndSave);
+            SetBackFunction(new UIMenuActionOpenMenu(this, closedMenu));
         }
     }
 }
