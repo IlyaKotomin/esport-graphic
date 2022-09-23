@@ -12,7 +12,7 @@ namespace EsportGraphics.src.EGraphics
     internal class AmmoCounter : UpdateAndDraw
     {
         private Layer _layer = Layer.Foreground;
-        public BitmapFont _font = new BitmapFont(Fonts[Ints["AmmoCounterFont"]], 8);
+        //public BitmapFont _font = new BitmapFont(Fonts[Ints["AmmoCounterFont"]], 8);
         public override void Draw()
         {
             if (!Settings["AmmoCounter"])
@@ -20,9 +20,11 @@ namespace EsportGraphics.src.EGraphics
 
             StartDraw(_layer);
 
+            BitmapFont _font = new BitmapFont(Fonts[Ints["AmmoCounterFont"]], 8);
+
             _font.scale = new Vec2(Floats["AmmoCounterScale"]);
 
-            HandleNormalGuns();
+            HandleNormalGuns(_font);
             HandleFlameThrower();
 
             StopDraw(_layer);
@@ -39,7 +41,7 @@ namespace EsportGraphics.src.EGraphics
                         new ColorMaterial(ESColors["TampedGun"]) :
                         (Material)new ColorMaterial(ESColors["UnTampedGun"]);
         }
-        private void HandleNormalGuns()
+        private void HandleNormalGuns(BitmapFont _font)
         {
             foreach (var gun in from Gun gun in AvailableThings<Gun>()
                                 where !IsUncountebleGun(gun) && !gun.infinite && gun.canPickUp

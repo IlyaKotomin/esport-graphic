@@ -67,7 +67,7 @@ namespace Config
             {"BarFront", Color.Green },
             {"EnemyBullet", Color.Red },
             {"EnemyDuck", Color.Pink },
-            {"LocalBullet", Color.Green },
+            {"LocalBullet", Color.LightGreen },
             {"AmmoCounterFront", Color.White },
             {"AmmoCounterBack", Color.Black },
             {"TampedGun", Color.Green },
@@ -86,6 +86,7 @@ namespace Config
             {"Ducks", true },
             {"ItemSpawnerBar", true },
             {"ItemBoxBar", true },
+            {"NettedDuckBar", true },
             {"AmmoCounter", true },
             {"Xray", true },
             {"TampingWeapons", true },
@@ -94,9 +95,7 @@ namespace Config
         };
         private static Dictionary<string, float> DefaultFloats = new Dictionary<string, float>()
         {
-            {"AmmoCounterScale", 1f},
-            {"AmmoCounterOffsetX", 0f},
-            {"AmmoCounterOffsetY", 0f},
+            {"AmmoCounterScale", 1f}
         };
         private static Dictionary<string, int> DefaultInts = new Dictionary<string, int>()
         {
@@ -113,8 +112,7 @@ namespace Config
             "furni\\tinyFont",
             "furni\\handstandFont",
             "furni\\widefont",
-            "furni\\italFont",
-
+            "furni\\italFont"
         };
         public static void Save<Key, Value>(Dictionary<Key, Value> pairs, string path) => File.WriteAllText(path, JsonConvert.SerializeObject(pairs));
     }

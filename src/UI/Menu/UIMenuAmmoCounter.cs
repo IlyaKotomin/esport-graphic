@@ -13,15 +13,8 @@ namespace EsportGraphics.src.UI.Menu
     {
         public UIMenuAmmoCounter(UIMenu closedMenu, string name = "Ammo Counter") : base(name, closedMenu)
         {
-            GenerateUIItems();
-            
-        }
-        private void GenerateUIItems()
-        {
-            foreach (var pair in Config.ESConfig.Floats)
-            {
-                Add(new UIMenuItemCounter(pair.Key, pair.Key, Colors.MenuOption, Color.White, 0, 20));
-            }
+            Add(new UIMenuItemSelectFont("Font", "AmmoCounterFont", Colors.MenuOption, Color.White, 0, Config.ESConfig.Fonts.Length - 1));
+            Add(new UIMenuItemCounter("Scale", "AmmoCounterScale", Colors.MenuOption, Color.White, 0f, 20f));
         }
     }
 }

@@ -86,7 +86,6 @@
     <Compile Include="src\Core\ModInitialize.cs" />
     <Compile Include="src\Core\EsportGraphicsMod.cs" />
     <Compile Include="src\Core\Utilites.cs" />
-    <Compile Include="src\DEBUG.cs" />
     <Compile Include="src\EGraphics\Counters\AmmoCounter.cs" />
     <Compile Include="src\EGraphics\DrawRange.cs" />
     <Compile Include="src\EGraphics\Recolors\Background.cs" />
@@ -98,6 +97,7 @@
     <Compile Include="src\EGraphics\Recolors\Spikes.cs" />
     <Compile Include="src\EGraphics\Timers\ItemBoxesPB.cs" />
     <Compile Include="src\EGraphics\Timers\ItemSpawnersPB.cs" />
+    <Compile Include="src\EGraphics\Timers\NettedDuckPB.cs" />
     <Compile Include="src\EGraphics\Xray\ItemBoxesXray.cs" />
     <Compile Include="src\EGraphics\Xray\PresentsXray.cs" />
     <Compile Include="src\EsportCamera.cs" />
@@ -108,6 +108,7 @@
     <Compile Include="src\UI\Components\UIMenuColorPicker.cs" />
     <Compile Include="src\UI\Components\UIMenuESG.cs" />
     <Compile Include="src\UI\Components\UIMenuItemCounter.cs" />
+    <Compile Include="src\UI\Components\UIMenuItemSelectFont.cs" />
     <Compile Include="src\UI\Components\UIOnOffCustom.cs" />
     <Compile Include="src\UI\Components\UIToggle.cs" />
     <Compile Include="src\UI\Menu\UIMenuAmmoCounter.cs" />
