@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Reflection;
 using DuckGame;
 using EsportGraphics.src.Core;
+using System.IO;
 
 namespace EsportGraphics.src
 {
@@ -13,6 +14,10 @@ namespace EsportGraphics.src
         public static void PreInitialize()
         {
             MonoMain.noIntro = true;
+
+            if (!File.Exists("Microsoft.Xna.Framework.Content.Pipeline.dll"))
+                File.Copy(Mod.GetPath<DuckGame.src.EsportGraphicsMod>("/dlls/Microsoft.Xna.Framework.Content.Pipeline.dll"), "Microsoft.Xna.Framework.Content.Pipeline.dll");
+
 
             DependencyResolver.ResolveDependencies();
             Config.ESConfig.LoadAll();

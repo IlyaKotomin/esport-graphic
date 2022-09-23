@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-[assembly: AssemblyTitle("|RED|e|BLUE|sport graphics")]         //Name
-[assembly: AssemblyDescription("|GREEN|Some additional graphics things")]        //Description
-[assembly: AssemblyCompany("Kotoxik")]                      //Author
-[assembly: AssemblyVersion("1.0.0.0")]                      //Version
+[assembly: AssemblyTitle("Esport graphics | |YELLOW|ESG")]
+[assembly: AssemblyDescription("PRESS F7 TO OPEN SETTINGS MENU")]
+[assembly: AssemblyCompany("Kotoxik")]
+[assembly: AssemblyVersion("1.0.0.0")]

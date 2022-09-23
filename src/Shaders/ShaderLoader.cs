@@ -18,24 +18,6 @@ namespace EsportGraphics.src.Shaders
         public static Dictionary<string, MTEffect> mtEffects = new();
         public static void Load()
         {
-            //var infos = typeof(ESColors).GetProperties();
-
-            //foreach (PropertyInfo info in infos)
-            //{
-            //    Color color = (Color)info.GetValue(null, null);
-
-            //    EffectProcessor processor = new EffectProcessor();
-            //    var effect = processor.Process(new EffectContent { EffectCode = ColorFX(color) }, new MyContext());
-
-            //    try
-            //    {
-            //        string name = $"color{color}";
-            //        shadersCodes.Add(name, effect.GetEffectCode());
-            //        mtEffects.Add(name, new MTEffect(new Effect(Graphics.device, ShaderLoader.shadersCodes[name]), name));
-            //    }
-            //    catch (Exception) { }
-
-            //}
             EffectProcessor processor = new EffectProcessor();
             var effect = processor.Process(new EffectContent { EffectCode = ColorFX() }, new MyContext());
 

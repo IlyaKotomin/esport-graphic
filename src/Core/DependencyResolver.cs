@@ -30,6 +30,7 @@ namespace EsportGraphics.src.Core
 
             }
 
+
             if (Assembly.GetCallingAssembly() != Assembly.GetExecutingAssembly())
             {
                 return null;
