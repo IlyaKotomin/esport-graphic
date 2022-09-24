@@ -15,7 +15,7 @@ namespace EsportGraphics.src.EGraphics.Timers
         static Layer _layer = Layer.Game;
         public override void Draw()
         {
-            if (!Settings["ItemSpawnerBar"])
+            if (!Settings["ItemSpawnerBar"] || DuckNetwork.hostProfile != DuckNetwork.localProfile)
                 return;
 
             base.Draw();
