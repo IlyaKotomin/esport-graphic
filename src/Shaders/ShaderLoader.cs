@@ -9,6 +9,7 @@ using DuckGame;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 using Microsoft.Xna.Framework.Content.Pipeline.Processors;
 using Microsoft.Xna.Framework.Graphics;
+using XnaContentProvider;
 
 namespace EsportGraphics.src.Shaders
 {
@@ -18,11 +19,18 @@ namespace EsportGraphics.src.Shaders
         public static Dictionary<string, MTEffect> mtEffects = new();
         public static void Load()
         {
+            var content = new EffectContent()
+            {
+                EffectCode = ColorFX()
+            };
+
+            var context = new CpC();
             EffectProcessor processor = new EffectProcessor();
-            var effect = processor.Process(new EffectContent { EffectCode = ColorFX() }, new MyContext());
+
+            CompiledEffectContent effectContent = processor.Process(content, context);
 
             string name = "color";
-            shadersCodes.Add(name, effect.GetEffectCode());
+            shadersCodes.Add(name, effectContent.GetEffectCode());
             mtEffects.Add(name, new MTEffect(new Effect(Graphics.device, ShaderLoader.shadersCodes[name]), name));
 
         }

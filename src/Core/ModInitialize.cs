@@ -15,6 +15,8 @@ namespace EsportGraphics.src
         {
             MonoMain.noIntro = true;
 
+
+            //YEAH, I KNOW, THIS IS BULLSHIT, BUT MOD DOESNT WORK WITHOUT THIS!!!
             if (!File.Exists("Microsoft.Xna.Framework.Content.Pipeline.dll"))
                 File.Copy(Mod.GetPath<DuckGame.src.EsportGraphicsMod>("/dlls/Microsoft.Xna.Framework.Content.Pipeline.dll"), "Microsoft.Xna.Framework.Content.Pipeline.dll");
 

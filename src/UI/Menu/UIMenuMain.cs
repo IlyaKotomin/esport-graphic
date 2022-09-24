@@ -2,6 +2,7 @@
 using EsportGraphics.src.UI.Menu;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -31,13 +32,20 @@ namespace EsportGraphics.src.UI
             Add(new UIText("OTHER", Color.LightGray) { scale = new Vec2(1.3f) });
             Add(new UIText("", Color.LightGray));
 
-            Add(new UIMenuItem("Ammo Counter", new UIMenuActionOpenMenu(this, new UIMenuAmmoCounter(this))));
-            Add(new UIMenuItem("Credits"));
-            Add(new UIMenuItem("Open Configs Folder"));
+            Add(new UIMenuItem("Ammo Counter",
+                new UIMenuActionOpenMenu(this, new UIMenuAmmoCounter(this))));
+
+            Add(new UIMenuItem("Support",
+                new UIMenuActionCallFunction(new UIMenuActionCallFunction.Function(Support))));
+
+            Add(new UIMenuItem("Open Configs Folder",
+                new UIMenuActionCallFunction(new UIMenuActionCallFunction.Function(OpenConfigFolder))));
 
             Add(new UIText("", Color.LightGray));
 
             SetBackFunction(new UIMenuActionOpenMenu(this, new UIMenuSaveSettings(this)));
         }
+        private static void OpenConfigFolder() => Process.Start(AppDomain.CurrentDomain.BaseDirectory);
+        private static void Support() => Process.Start("https://discord.gg/4sA5EgQCq9");
     }
 }

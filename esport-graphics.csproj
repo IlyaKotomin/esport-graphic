@@ -77,7 +77,8 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="XnaContentProvider">
+    <Reference Include="XnaContentProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>content\dlls\XnaContentProvider.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -103,9 +104,7 @@
     <Compile Include="src\EGraphics\Timers\NettedDuckPB.cs" />
     <Compile Include="src\EGraphics\Xray\ItemBoxesXray.cs" />
     <Compile Include="src\EGraphics\Xray\PresentsXray.cs" />
-    <Compile Include="src\EsportCamera.cs" />
     <Compile Include="src\Shaders\ColorMaterial.cs" />
-    <Compile Include="src\Shaders\Context.cs" />
     <Compile Include="src\Shaders\ShaderLoader.cs" />
     <Compile Include="src\UI\Components\ColorPart.cs" />
     <Compile Include="src\UI\Components\UIMenuColorPicker.cs" />
